@@ -8,16 +8,15 @@
  * Factory in the redditAngularApp.
  */
 angular.module('redditAngularApp')
-  .factory('RedditApiService', function($http) {
+  .factory('RedditApiService', function($http, Config) {
+    var baseUrl = Config.API.protocol + '://' + Config.API.host + '/' + Config.API.path + '/';
 
-    var all_url = "http://www.reddit.com/r/all/new.json?limit=5";
-
-    // Public API here
     return {
       getArticlesList: function(direction, last) {
-        var url = direction !== undefined && last !== undefined ? //
-          all_url + '&' + direction + '=' + last + '&count=25' //
-          : all_url; //
+        var url = baseUrl + 'all/new.json?limit=' + Config.itemsPerPage;
+        if (direction !== undefined && last !== undefined) {
+          url += '&' + direction + '=' + last + '&count=25';
+        }
         return $http({
           url: url
         });

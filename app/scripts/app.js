@@ -12,6 +12,14 @@ angular
   .module('redditAngularApp', [
     'ngRoute'
   ])
+  .constant('Config', {
+    itemsPerPage: 5,
+    API: {
+      protocol: 'http',
+      host: 'www.reddit.com',
+      path: 'r'
+    }
+  })
   .config(function($routeProvider) {
     $routeProvider
       .when('/:direction?/:last?', {
