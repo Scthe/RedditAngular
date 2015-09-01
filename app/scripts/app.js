@@ -14,7 +14,7 @@ angular
   ])
   .config(function($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/:direction?/:last?', {
         templateUrl: 'views/article-list.html',
         controller: 'ArticleListCtrl',
         controllerAs: 'article-list'

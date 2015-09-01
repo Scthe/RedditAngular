@@ -11,9 +11,11 @@ angular.module('redditAngularApp')
   .service('ArticlesRepositoryService', function($q, RedditApiService) {
     var self = this;
     self.articles = [];
+    self.articleBefore = undefined;
+    self.articleAfter = undefined;
 
     ///
-    /// Read
+    /// Get
     ///
     self.all = function() {
       return self.articles;
@@ -41,10 +43,16 @@ angular.module('redditAngularApp')
     };
 
     ///
-    /// Write
+    /// Actions
     ///
-    self.refreshList = function() {
-      return RedditApiService.getArticlesList()
+    self.refreshList = function(direction, last) {
+      // params check
+      if (direction !== 'after' && direction !== 'before') {
+        direction = undefined;
+        last = undefined;
+      }
+
+      return RedditApiService.getArticlesList(direction, last)
         .then(function(resp) {
           // clear existing list
           while (self.articles.length) {
@@ -52,10 +60,15 @@ angular.module('redditAngularApp')
           }
 
           // add articles
-          var list = resp.data.data.children;
+          var respObj = resp.data.data;
+          var list = respObj.children;
           for (var i = 0; i < list.length; i++) {
             self.articles.push(list[i].data);
           }
+
+          // pagination
+          self.articleBefore = respObj.before;
+          self.articleAfter = respObj.after;
         });
     };
 

@@ -10,13 +10,16 @@
 angular.module('redditAngularApp')
   .factory('RedditApiService', function($http) {
 
-    var all_url = "http://www.reddit.com/r/all/new.json";
+    var all_url = "http://www.reddit.com/r/all/new.json?limit=5";
 
     // Public API here
     return {
-      getArticlesList: function() {
+      getArticlesList: function(direction, last) {
+        var url = direction !== undefined && last !== undefined ? //
+          all_url + '&' + direction + '=' + last + '&count=25' //
+          : all_url; //
         return $http({
-          url: all_url
+          url: url
         });
       },
       getArticle: function(sub, id) {
