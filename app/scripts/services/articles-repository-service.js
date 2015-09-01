@@ -38,7 +38,11 @@ angular.module('redditAngularApp')
         return deferred.promise;
       } else {
         // download the article
-        return RedditApiService.getArticle(sub, id);
+        return RedditApiService.getArticle(sub, id)
+          .then(function(resp) {
+            // that's kind of a weird mapping we have to do here..
+            return resp.data[0].data.children[0].data;
+          });
       }
     };
 

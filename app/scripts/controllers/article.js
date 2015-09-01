@@ -14,10 +14,7 @@ angular.module('redditAngularApp')
         sub = $routeParams.subreddit;
 
       ArticlesRepositoryService.get(id, sub)
-        .then(function(resp) {
-          console.log(resp);
-          var article = resp.data[0].data.children[0].data;
-          // console.log(article);
+        .then(function(article) {
           $scope.article = article;
         }, function() {
           console.error('GET article error');
