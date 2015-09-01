@@ -18,6 +18,13 @@ angular.module('redditAngularApp')
         return $http({
           url: all_url
         });
+      },
+      getArticle: function(sub, id) {
+        console.log('get article: ' + sub + '/' + id);
+        var url = 'http://www.reddit.com/r/' + sub + '/comments/' + id + '/.json?limit=1';
+        return $http({
+          url: url
+        });
       }
     };
   });

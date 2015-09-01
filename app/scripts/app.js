@@ -19,7 +19,7 @@ angular
         controller: 'ArticleListCtrl',
         controllerAs: 'article-list'
       })
-      .when('/article/:articleId', {
+      .when('/article/:subreddit/:articleId', {
         templateUrl: 'views/article.html',
         controller: 'ArticleCtrl',
         controllerAs: 'article'

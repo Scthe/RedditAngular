@@ -8,7 +8,7 @@
  * Service in the redditAngularApp.
  */
 angular.module('redditAngularApp')
-  .service('ArticlesRepositoryService', function(RedditApiService) {
+  .service('ArticlesRepositoryService', function($q, RedditApiService) {
     var self = this;
     self.articles = [];
 
@@ -19,7 +19,7 @@ angular.module('redditAngularApp')
       return self.articles;
     };
 
-    self.get = function(id) {
+    self.get = function(id, sub) {
       var article;
       // search in articles we already have
       for (var i = 0; i < self.articles.length; i++) {
@@ -29,9 +29,15 @@ angular.module('redditAngularApp')
         }
       }
 
-      // TODO if not found download it
-
-      return article; // TODO return promise
+      if (article) {
+        // found in the article list, wrap in promise
+        var deferred = $q.defer();
+        deferred.resolve(article);
+        return deferred.promise;
+      } else {
+        // download the article
+        return RedditApiService.getArticle(sub, id);
+      }
     };
 
     ///

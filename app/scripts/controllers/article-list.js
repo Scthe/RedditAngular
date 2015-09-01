@@ -11,9 +11,8 @@ angular.module('redditAngularApp')
   .controller('ArticleListCtrl', function($scope, ArticlesRepositoryService) {
     $scope.list = ArticlesRepositoryService;
 
-    $scope.linkForArticle = function(id) {
-      var article = ArticlesRepositoryService.get(id);
-      return article ? '/article/' + article.id : undefined;
+    $scope.linkForArticle = function(article) {
+      return article ? '/article/' + article.subreddit + '/' + article.id : '';
     };
 
     ArticlesRepositoryService.refreshList()

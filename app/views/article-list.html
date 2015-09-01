@@ -2,7 +2,7 @@
 
 <div ng-repeat="item in list.all()">
     <p>[{{ item.id }}]</p>
-    <a href="#{{ linkForArticle(item.id) }}">
+    <a href="#{{ linkForArticle(item) }}">
         <h4>{{ item.title }}</h4>
     </a>
 </div>
