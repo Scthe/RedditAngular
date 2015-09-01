@@ -1,1 +1,6 @@
 <p>This is the articleList view.</p>
+
+<div ng-repeat="item in list.all()">
+    <p>[{{ item.id }}]</p>
+    <h4>{{ item.title }}</h4>
+</div>

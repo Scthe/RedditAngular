@@ -8,16 +8,16 @@
  * Factory in the redditAngularApp.
  */
 angular.module('redditAngularApp')
-  .factory('RedditApiService', function () {
-    // Service logic
-    // ...
+  .factory('RedditApiService', function($http) {
 
-    var meaningOfLife = 42;
+    var all_url = "http://www.reddit.com/r/all/new.json";
 
     // Public API here
     return {
-      someMethod: function () {
-        return meaningOfLife;
+      getArticlesList: function() {
+        return $http({
+          url: all_url
+        });
       }
     };
   });
