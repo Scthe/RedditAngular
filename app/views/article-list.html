@@ -4,9 +4,4 @@
 <a href="#{{ linkPrevPage() }}">Prev</a>
 <a href="#{{ linkNextPage() }}">Next</a>
 
-<div ng-repeat="item in list.all()">
-    <p>[{{ item.id }}]</p>
-    <a href="#{{ linkForArticle(item) }}">
-        <h4>{{ item.title }}</h4>
-    </a>
-</div>
+<article-list-item ng-repeat="item in list.all()"/>
