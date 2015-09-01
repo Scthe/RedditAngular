@@ -11,6 +11,11 @@ angular.module('redditAngularApp')
   .controller('ArticleListCtrl', function($scope, ArticlesRepositoryService) {
     $scope.list = ArticlesRepositoryService;
 
+    $scope.linkForArticle = function(id) {
+      var article = ArticlesRepositoryService.get(id);
+      return article ? '/article/' + article.id : undefined;
+    };
+
     ArticlesRepositoryService.refreshList()
       .then(function(data) {
           console.log('Articles list refreshed');

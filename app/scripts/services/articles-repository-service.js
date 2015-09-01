@@ -19,6 +19,21 @@ angular.module('redditAngularApp')
       return self.articles;
     };
 
+    self.get = function(id) {
+      var article;
+      // search in articles we already have
+      for (var i = 0; i < self.articles.length; i++) {
+        var a = self.articles[i];
+        if (a.id === id) {
+          article = a;
+        }
+      }
+
+      // TODO if not found download it
+
+      return article; // TODO return promise
+    };
+
     ///
     /// Write
     ///
