@@ -10,8 +10,13 @@
  */
 angular
   .module('redditAngularApp', [
-    'ngRoute'
+    'ngRoute',
+    'ngMockE2E'
   ])
+  .run(function($httpBackend) {
+    $httpBackend.whenGET(/views\//).passThrough();
+    $httpBackend.whenGET(/http:\/\/www.reddit.com\/r\//).passThrough();
+  })
   .constant('Config', {
     itemsPerPage: 5,
     API: {
