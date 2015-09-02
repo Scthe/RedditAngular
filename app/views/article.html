@@ -1,11 +1,15 @@
-<h1 class="article__title">{{ article.title }}</h1>
+<div class="alert alert-danger alert-dismissible" ng-show="errorMessage" role="alert">{{ errorMessage }}</div>
 
-<div class="article__metadata">
-    <article-subreddit article="article" class="article__subreddit"></article-subreddit>
-    <article-date article="article" class="article__date"></article-date>
-    <article-author article="article" class="article__author"></article-author>
+<div ng-hide="errorMessage">
+    <h1 class="article__title">{{ article.title }}</h1>
+
+    <div class="article__metadata">
+        <article-subreddit article="article" class="article__subreddit"></article-subreddit>
+        <article-date article="article" class="article__date"></article-date>
+        <article-author article="article" class="article__author"></article-author>
+    </div>
+
+    <p class="article__content">{{ article.selftext }}</p>
+
+    <add-comment-form parent="getArticleId()"></add-comment-form>
 </div>
-
-<p class="article__content">{{ article.selftext }}</p>
-
-<add-comment-form parent="getArticleId()"></add-comment-form>

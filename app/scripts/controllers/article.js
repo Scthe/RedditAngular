@@ -14,6 +14,7 @@ angular.module('redditAngularApp')
         sub = $routeParams.subreddit;
 
       $scope.article = undefined;
+      $scope.errorMessage = undefined;
 
       $scope.getArticleId = function() {
         return $scope.article === undefined ? '' : $scope.article.name;
@@ -22,7 +23,9 @@ angular.module('redditAngularApp')
       ArticlesRepositoryService.get(id, sub)
         .then(function(article) {
           $scope.article = article;
+          $scope.errorMessage = undefined;
         }, function() {
-          console.error('GET article error');
+          $scope.errorMessage = 'An error occured, please check your request.';
         });
+
     });

@@ -10,6 +10,7 @@
 angular.module('redditAngularApp')
   .controller('ArticleListCtrl', function($scope, $routeParams, ArticlesRepositoryService) {
     $scope.list = ArticlesRepositoryService;
+    $scope.errorMessage = undefined;
 
     $scope.linkForArticle = function(article) {
       return article ? '/article/' + article.subreddit + '/' + article.id : '';
@@ -29,14 +30,11 @@ angular.module('redditAngularApp')
 
     ArticlesRepositoryService
       .refreshList($routeParams.direction, $routeParams.last)
-      .then(function(data) {
-          console.log('Articles list refreshed');
-        },
-        function(data, status) {
-          // self.errorMessage = 'An error occured, please check your request. Errorcode: ' + status;
-          console.error('error: ' + status);
-        });
-
+      .then(function() {
+        $scope.errorMessage = undefined;
+      }, function(data, status) {
+        $scope.errorMessage = 'An error occured, please check your request. Errorcode: ' + status;
+      });
 
 
   });
