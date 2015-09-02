@@ -15,6 +15,10 @@ angular.module('redditAngularApp')
 
       $scope.article = undefined;
 
+      $scope.getArticleId = function() {
+        return $scope.article === undefined ? '' : $scope.article.name;
+      };
+
       ArticlesRepositoryService.get(id, sub)
         .then(function(article) {
           $scope.article = article;

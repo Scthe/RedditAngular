@@ -7,9 +7,22 @@
  * # addCommentForm
  */
 angular.module('redditAngularApp')
-  .directive('addCommentForm', function () {
+  .directive('addCommentForm', function() {
     return {
       templateUrl: 'views/add-comment-form.html',
-      restrict: 'E'
+      restrict: 'E',
+      scope: {
+        parent: '=parent'
+      },
+      controller: function($scope, RedditApiService) {
+
+        $scope.text = '';
+
+        $scope.submitData = function() {
+          RedditApiService.addComment($scope.parent, $scope.text);
+          $scope.text = '';
+        };
+
+      }
     };
   });

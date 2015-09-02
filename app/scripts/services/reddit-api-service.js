@@ -27,6 +27,9 @@ angular.module('redditAngularApp')
         return $http({
           url: url
         });
+      },
+      addComment: function(parent, text) {
+        console.log('Add comment to ' + parent + ': "' + text + '"');
       }
     };
   });

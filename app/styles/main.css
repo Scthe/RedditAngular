@@ -72,6 +72,11 @@ body {
 
 
 /* Single article view */
+.article__title {
+  /* make all margins unidirectional */
+  margin-top: 0;
+  margin-bottom: 8px;
+}
 .article__metadata {
   color: #949494;
   font-size: 1em;
@@ -79,11 +84,6 @@ body {
 }
 .article__metadata .glyphicon{
   color: #DDDDDD;
-}
-.article__title {
-  /* make all margins unidirectional */
-  margin-top: 0;
-  margin-bottom: 8px;
 }
 .article__subreddit{
   margin-right: 10px;
@@ -97,4 +97,7 @@ body {
 .article__author{
   /* do not 'break' the element - move to next line if insufficient space*/
   display: inline-block;
+}
+.article__content{
+  margin-bottom: 30px;
 }

@@ -1,5 +1,5 @@
-<h2>Add comment<h2>
-<form>
-    <textarea class="form-control" rows="3" style="max-width:100%"></textarea>
-    <button type="submit" class="btn btn-default">Submit</button>
+<form name="addCommentForm" ng-submit="submitData()" novalidate>
+    <label for="comment-text">Add comment</label>
+    <textarea id="comment-text" name="comment-text" ng-model="text" required class="form-control" rows="3" style="max-width:100%"></textarea>
+    <button type="submit" ng-disabled="addCommentForm.$invalid" class="btn btn-default">Submit</button>
 </form>
