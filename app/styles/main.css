@@ -26,3 +26,46 @@ body {
     max-width: 730px;
   }
 }
+
+
+/*Articles list */
+.articles-list__main-title{
+  margin-bottom: 40px;
+  text-align: center;
+}
+.articles-list__pagination{
+  margin-bottom: 40px;
+}
+
+
+/* Article item as displayed on the list of articles */
+.article-item {
+  /* spacing between articles */
+  margin-bottom: 40px;
+}
+.article-item .glyphicon{
+  color: #DDDDDD;
+}
+.article-item__title {
+  font-size: 1.4em;
+  /* make all margins unidirectional */
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.article-item__subtitle {
+  color: #949494;
+  font-size: 1em;
+}
+.article-item__subreddit {
+  margin-right: 10px;
+  display: inline-block;
+}
+.article-item__date {
+  margin-right: 10px;
+  /* do not 'break' the element - move to next line if insufficient space*/
+  display: inline-block;
+}
+.article-item__author {
+  /* do not 'break' the element - move to next line if insufficient space*/
+  display: inline-block;
+}

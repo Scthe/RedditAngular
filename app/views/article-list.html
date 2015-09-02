@@ -1,7 +1,14 @@
-<p>This is the articleList view.</p>
+<h1 class="articles-list__main-title">New articles on /r/all:</h1>
 
-<!-- TODO shade depending on .articleBefore / articleAfter -->
-<a href="#{{ linkPrevPage() }}">Prev</a>
-<a href="#{{ linkNextPage() }}">Next</a>
+<nav class="articles-list__pagination">
+  <ul class="pager">
+    <li class="next">
+        <a href="#{{ linkNextPage() }}">Older &rarr;</a>
+    </li>
+    <li class="previous" ng-class="{disabled: list.articleBefore === null}">
+        <a href="#{{ linkPrevPage() }}">&larr; Newer</a>
+    </li>
+  </ul>
+</nav>
 
 <article-list-item ng-repeat="item in list.all()"/>

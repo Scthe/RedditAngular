@@ -1,4 +1,12 @@
-<p>[{{ item.id }}]</p>
-<a href="#{{ linkForArticle(item) }}">
-    <h4>{{ item.title }}</h4>
-</a>
+<div class="article-item">
+    <a href="#{{ linkForArticle(item) }}">
+        <h4 class="article-item__title">{{ item.title }}</h4>
+    </a>
+
+    <p class="article-item__subtitle">
+        <article-subreddit article="item" class="article-item__subreddit"></article-subreddit>
+        <article-date article="item" class="article-item__date"></article-date>
+        <article-author article="item" class="article-item__author"></article-author>
+    </p>
+</div>
+
