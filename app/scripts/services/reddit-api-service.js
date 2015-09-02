@@ -9,7 +9,8 @@
  */
 angular.module('redditAngularApp')
   .factory('RedditApiService', function($http, Config) {
-    var baseUrl = Config.API.protocol + '://' + Config.API.host + '/' + Config.API.path + '/';
+    var baseUrl = Config.API.protocol + '://' + Config.API.host + '/' + Config.API.path + '/',
+      addCommentUrl = Config.API.protocol + '://' + Config.API.host + '/api/comment';
 
     return {
       getArticlesList: function(direction, last) {
@@ -29,7 +30,12 @@ angular.module('redditAngularApp')
         });
       },
       addComment: function(parent, text) {
-        console.log('Add comment to ' + parent + ': "' + text + '"');
+        var msgObject = {
+          api_type: 'json',
+          text: encodeURIComponent(text),
+          thing_id: parent
+        };
+        return $http.post(addCommentUrl, msgObject);
       }
     };
   });
