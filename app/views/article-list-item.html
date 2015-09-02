@@ -1,4 +1,7 @@
-<div class="article-item">
+<div class="article-item clearfix">
+
+    <img ng-src="{{ item.thumbnail }}" alt="" class="pull-left article-item__image" ng-if="item.thumbnail !== 'self' && item.thumbnail !== 'default' && item.thumbnail !== '' && item.thumbnail !== 'nsfw' "/>
+
     <a href="#{{ linkForArticle(item) }}">
         <h4 class="article-item__title">{{ item.title }}</h4>
     </a>
@@ -9,4 +12,3 @@
         <article-author article="item" class="article-item__author"></article-author>
     </p>
 </div>
-

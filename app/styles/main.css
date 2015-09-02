@@ -69,6 +69,13 @@ body {
   /* do not 'break' the element - move to next line if insufficient space*/
   display: inline-block;
 }
+.article-item__image {
+  /* spacing between image and rest of item's content*/
+  margin-right: 10px;
+  /* enforce some standard thumbnail size*/
+  max-width: 70px;
+  max-height: 70px;
+}
 
 
 /* Single article view */
@@ -100,4 +107,8 @@ body {
 }
 .article__content{
   margin-bottom: 30px;
+}
+.article__image {
+  margin: 0 auto;
+  display: block;
 }

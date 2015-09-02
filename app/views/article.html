@@ -9,7 +9,11 @@
         <article-author article="article" class="article__author"></article-author>
     </div>
 
-    <p class="article__content">{{ article.selftext }}</p>
+    <div class="article__content clearfix">
+        <img ng-src="{{ article.thumbnail }}" alt="" class="article__image" ng-if="article.thumbnail !== 'self' && article.thumbnail !== 'default' && article.thumbnail !== '' && article.thumbnail !== 'nsfw' "/>
+
+        <p class="article__content">{{ article.selftext }}</p>
+    </div>
 
     <add-comment-form parent="getArticleId()"></add-comment-form>
 </div>
