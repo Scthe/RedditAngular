@@ -1,4 +1,11 @@
-<p>This is the article view.</p>
+<h1 class="article__title">{{ article.title }}</h1>
 
-{{ article.title }}
-{{ article.id }}
+<div class="article__metadata">
+    <article-subreddit article="article" class="article__subreddit"></article-subreddit>
+    <article-date article="article" class="article__date"></article-date>
+    <article-author article="article" class="article__author"></article-author>
+</div>
+
+<p class="article__content">{{ article.selftext }}</p>
+
+<add-comment-form></add-comment-form>

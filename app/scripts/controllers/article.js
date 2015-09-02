@@ -13,6 +13,8 @@ angular.module('redditAngularApp')
       var id = $routeParams.articleId,
         sub = $routeParams.subreddit;
 
+      $scope.article = undefined;
+
       ArticlesRepositoryService.get(id, sub)
         .then(function(article) {
           $scope.article = article;

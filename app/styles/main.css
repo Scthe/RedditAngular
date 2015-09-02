@@ -69,3 +69,32 @@ body {
   /* do not 'break' the element - move to next line if insufficient space*/
   display: inline-block;
 }
+
+
+/* Single article view */
+.article__metadata {
+  color: #949494;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+.article__metadata .glyphicon{
+  color: #DDDDDD;
+}
+.article__title {
+  /* make all margins unidirectional */
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.article__subreddit{
+  margin-right: 10px;
+  display: inline-block;
+}
+.article__date{
+  margin-right: 10px;
+  /* do not 'break' the element - move to next line if insufficient space*/
+  display: inline-block;
+}
+.article__author{
+  /* do not 'break' the element - move to next line if insufficient space*/
+  display: inline-block;
+}
