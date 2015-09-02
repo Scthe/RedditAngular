@@ -1,5 +1,18 @@
+<h2>Comments</h2>
+
+<div class="alert alert-success dismisable alert-dismissible" ng-show="showSuccess" role="alert">
+    Comment has been successfully saved!
+</div>
+<div class="alert alert-info alert-dismissible" ng-show="showSend" role="alert">
+    Sending comment..
+</div>
+<div class="alert alert-danger alert-dismissible" ng-show="showError" role="alert">
+    There was a problem with Your comment
+</div>
+
 <form name="addCommentForm" ng-submit="submitData()" novalidate>
-    <label for="comment-text">Add comment</label>
+    <label for="comment-text">Add comment:</label>
     <textarea id="comment-text" name="comment-text" ng-model="text" required class="form-control" rows="3" style="max-width:100%"></textarea>
     <button type="submit" ng-disabled="addCommentForm.$invalid" class="btn btn-default">Submit</button>
 </form>
+

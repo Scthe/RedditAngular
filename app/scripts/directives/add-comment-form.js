@@ -17,10 +17,29 @@ angular.module('redditAngularApp')
       controller: function($scope, RedditApiService) {
 
         $scope.text = '';
+        $scope.showSend = false;
+        $scope.showSuccess = false;
+        $scope.showError = false;
 
         $scope.submitData = function() {
-          RedditApiService.addComment($scope.parent, $scope.text);
+          // reset text input, do not allow to send more comments
+          // till response received, show information to the user
+          var text = $scope.text;
           $scope.text = '';
+          $scope.showSend = true;
+
+          RedditApiService.addComment($scope.parent, text)
+            .then(function() {
+                $scope.showSuccess = true;
+              },
+              function() {
+                $scope.showError = true;
+              })
+            .finally(function() {
+              $scope.showSend = false;
+            });
+
+
         };
 
       }

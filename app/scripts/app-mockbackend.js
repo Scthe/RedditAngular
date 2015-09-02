@@ -23,13 +23,9 @@ angular.module('redditAngularApp')
     $httpBackend
       .whenPOST(new RegExp(addCommentUrl))
       .respond(function(method, url, data, headers) {
+        // now we are going to assume everthing went ok
+        // and return OK response
         var message = angular.fromJson(data);
-        console.log('MOCK INTERCEPT');
-        console.log(method);
-        console.log(url);
-        console.log(data);
-        console.log(headers);
-
-        return [200, message, { /*headers*/ }];
+        return [200, message, { headers }];
       });
   });
