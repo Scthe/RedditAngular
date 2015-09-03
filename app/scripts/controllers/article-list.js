@@ -5,7 +5,9 @@
  * @name redditAngularApp.controller:ArticlelistCtrl
  * @description
  * # ArticlelistCtrl
- * Controller of the redditAngularApp
+ * Controller used to manage the content of articles list. In case of error
+ * the description can be found in $scope.errorMessage. Can optionaly
+ * use 'direction' and 'last' in route for paging purposes.
  */
 angular.module('redditAngularApp')
   .controller('ArticleListCtrl', function($scope, $routeParams, ArticlesRepositoryService) {

@@ -6,7 +6,7 @@
  * @function
  * @description
  * # asDate
- * Filter in the redditAngularApp.
+ * Filter to convert timestamp to javascript Date object.
  */
 angular.module('redditAngularApp')
   .filter('asDate', function () {

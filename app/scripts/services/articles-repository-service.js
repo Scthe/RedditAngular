@@ -5,7 +5,9 @@
  * @name redditAngularApp.ArticlesRepositoryService
  * @description
  * # ArticlesRepositoryService
- * Service in the redditAngularApp.
+ * Intermediate repository used to manage access to articles.
+ * Supports downloading all new articles from given subreddit, geting single
+ * article and pagination.
  */
 angular.module('redditAngularApp')
   .service('ArticlesRepositoryService', function($q, RedditApiService) {
@@ -50,7 +52,6 @@ angular.module('redditAngularApp')
     /// Actions
     ///
     self.refreshList = function(direction, last) {
-      // params check
       if (direction !== 'after' && direction !== 'before') {
         direction = undefined;
         last = undefined;

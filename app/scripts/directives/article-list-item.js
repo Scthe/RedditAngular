@@ -5,6 +5,7 @@
  * @name redditAngularApp.directive:ArticleListItem
  * @description
  * # ArticleListItem
+ * Single list item as displayed in articles list.
  */
 angular.module('redditAngularApp')
   .directive('articleListItem', function () {

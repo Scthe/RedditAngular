@@ -5,7 +5,9 @@
  * @name redditAngularApp.controller:ArticleCtrl
  * @description
  * # ArticleCtrl
- * Controller of the redditAngularApp
+ * Controller for displaying single article. Expects 'articleId'
+ * and 'subreddit' available in the route. check in $scope.errorMessage
+ * for any error messages
  */
 angular.module('redditAngularApp')
   .controller('ArticleCtrl',

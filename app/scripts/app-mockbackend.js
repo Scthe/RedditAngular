@@ -6,7 +6,10 @@
  * @description
  * # mockbackend
  *
- * Main module of the application.
+ * Override HTTP requests for predefined urls. The main purpose is to mock
+ * the comment add functionality from reddit api (it requires OAuth,
+ * which we don't have). This file may need to be modified in the future
+ * if backend changes.
  */
 angular.module('redditAngularApp')
   .run(function($httpBackend, Config) {

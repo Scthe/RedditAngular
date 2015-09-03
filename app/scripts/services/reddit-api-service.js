@@ -5,7 +5,10 @@
  * @name redditAngularApp.RedditApiService
  * @description
  * # RedditApiService
- * Factory in the redditAngularApp.
+ * Expose reddit API to other classes in the app. Currently supports:
+ * * getting list of articles
+ * * getting single article
+ * * posting new comment
  */
 angular.module('redditAngularApp')
   .factory('RedditApiService', function($http, Config) {

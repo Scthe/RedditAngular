@@ -5,6 +5,9 @@
  * @name redditAngularApp.directive:addCommentForm
  * @description
  * # addCommentForm
+ * Used with add-comment-form.html, expects article provided with
+ * 'parent' attribute. Exposes $scope.showSend, $scope.showSuccess
+ * and $scope.showError for notification purposes.
  */
 angular.module('redditAngularApp')
   .directive('addCommentForm', function() {
@@ -38,8 +41,6 @@ angular.module('redditAngularApp')
             .finally(function() {
               $scope.showSend = false;
             });
-
-
         };
 
       }

@@ -5,6 +5,7 @@
  * @name redditAngularApp.directive:articleDate
  * @description
  * # articleDate
+ * Directive for formatted display of article's creation date metadata.
  */
 angular.module('redditAngularApp')
   .directive('articleDate', function () {

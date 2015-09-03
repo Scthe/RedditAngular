@@ -5,6 +5,7 @@
  * @name redditAngularApp.directive:articleAuthor
  * @description
  * # articleAuthor
+ * Directive for formatted display of article's author metadata.
  */
 angular.module('redditAngularApp')
   .directive('articleAuthor', function () {
