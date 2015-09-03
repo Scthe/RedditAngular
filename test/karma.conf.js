@@ -29,30 +29,13 @@ module.exports = function(config) {
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
 
-      // "app/scripts/**/*.js",
-      // "test/mock/**/*.js",
-      // "test/spec/**/*.js",
-      // "test/spec/controllers/*.js"
-
-      // for some reason patterns fail (on windows at least)
-      // TODO investigate further
       "app/scripts/app.js",
-      "app/scripts/app-mockbackend.js",
-      "app/scripts/controllers/article-list.js",
-      "app/scripts/controllers/article.js",
-      "app/scripts/services/reddit-api-service.js",
-      "app/scripts/services/articles-repository-service.js",
-      "app/scripts/directives/article-list-item.js",
-      "app/scripts/filters/as-date.js",
-      "app/scripts/directives/article-date.js",
-      "app/scripts/directives/article-author.js",
-      "app/scripts/directives/article-subreddit.js",
-      "app/scripts/directives/add-comment-form.js",
+      "app/scripts/**/*.js",
 
-      // "test/spec/controllers/*.js",
+      "test/spec/controllers/*.js",
       // "test/spec/directives/*.js",
       "test/spec/filters/*.js",
-      // "test/spec/services/*.js",
+      "test/spec/services/*.js",
     ],
 
     // list of files / patterns to exclude
