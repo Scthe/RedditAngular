@@ -20,8 +20,9 @@
     "grunt-wiredep": "^2.0.0",
     "jit-grunt": "^0.9.1",
     "jshint-stylish": "^1.0.0",
+    "karma-chrome-launcher": "*",
     "karma-jasmine": "*",
-    "karma-phantomjs-launcher": "*",
+    "karma-mocha-reporter": "^1.1.1",
     "time-grunt": "^1.0.0"
   },
   "engines": {
