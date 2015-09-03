@@ -23,7 +23,7 @@ angular.module('redditAngularApp')
         });
       },
       getArticle: function(sub, id) {
-        var url = 'http://www.reddit.com/r/' + sub + '/comments/' + id + '/.json?limit=1';
+        var url = baseUrl + sub + '/comments/' + id + '/.json?limit=1';
         return $http({
           url: url
         });
