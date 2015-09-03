@@ -44,7 +44,7 @@ describe('Controller: ArticlelistCtrl', function() {
   });
 
   it('has articles list', function() {
-    var articles = ['article1', 'article2']
+    var articles = ['article1', 'article2'];
     articleRepositoryService.refreshList = function() {
       return $q.when(articles);
     };
